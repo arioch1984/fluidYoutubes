@@ -11,8 +11,6 @@ jQuery.fn.fluidYoutubes = function() {
     // Figure out and save aspect ratio for each video
     $allVideos.each(function() {
 
-        console.log(jQuery(this).height+' - '+jQuery(this).width);
-
         jQuery(this)
             .data('aspectRatio', this.height / this.width)
 
@@ -27,12 +25,9 @@ jQuery.fn.fluidYoutubes = function() {
     jQuery(window).resize(function() {
 
         var newWidth = $fluidEl.width();
-        console.log(newWidth);
 
         // Resize all videos according to their own aspect ratio
         $allVideos.each(function() {
-
-            console.log(jQuery(this).height+' - '+jQuery(this).width);
 
             var $el = jQuery(this);
             $el
